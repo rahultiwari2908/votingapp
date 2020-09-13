@@ -12,5 +12,10 @@ public interface VoteRepository extends CrudRepository<Vote, Long>{
 	List<Vote> findByTitle(String title);
 	
 	List<Vote> findAll();
+
+	Vote findById(int id);
+
+	void deleteByTitle(String title);
+
 	
 }

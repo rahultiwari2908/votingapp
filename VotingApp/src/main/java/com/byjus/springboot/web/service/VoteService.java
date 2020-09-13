@@ -15,6 +15,7 @@ public class VoteService {
     private static List<Vote> Votes = new ArrayList<Vote>();
 
     public List<String> retrieveVotes(List<Vote> list) {
+    	System.out.println("IN service");
         List<String> filteredVotes = new ArrayList<String>();
         for (Vote vote : list) {
         	filteredVotes.add(vote.getTitle());

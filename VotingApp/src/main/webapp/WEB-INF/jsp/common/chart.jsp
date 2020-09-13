@@ -51,7 +51,7 @@
 								type : 'pie'
 							},
 							title : {
-								text : 'Datails of voting done so far'
+								text : 'Details of voting done so far'
 							},
 							tooltip : {
 								pointFormat : '{series.name}: <b>{point.percentage:.1f}%</b>'

@@ -9,8 +9,8 @@ import javax.persistence.Id;
 public class Vote {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 	private int titleid;
 	private String title;
 	private String option;
@@ -26,6 +26,7 @@ public class Vote {
 	}
 
 	public Vote() {
+		super();
 	}
 
 	public int getTitleid() {
@@ -36,7 +37,7 @@ public class Vote {
 		this.titleid = titleid;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -68,7 +69,7 @@ public class Vote {
 		this.count = count;
 	}
 
-	public Vote(int id, int titleid, String title, String option, int count, String user) {
+	public Vote(long id, int titleid, String title, String option, int count, String user) {
 		super();
 		this.id = id;
 		this.titleid = titleid;
@@ -83,7 +84,7 @@ public class Vote {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + count;
-		result = prime * result + id;
+		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((option == null) ? 0 : option.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		result = prime * result + titleid;
@@ -122,6 +123,15 @@ public class Vote {
 		} else if (!user.equals(other.user))
 			return false;
 		return true;
+	}
+
+	public Vote(int titleid, String title, String option, int count, String user) {
+		super();
+		this.titleid = titleid;
+		this.title = title;
+		this.option = option;
+		this.count = count;
+		this.user = user;
 	}
 
 	@Override

@@ -1,6 +1,5 @@
 package com.byjus.springboot.web.controller;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.User;
@@ -17,12 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SocialFacebookController {
 
-	@Value("${spring.social.facebook.appSecret}")
-	String appSecret;
 
-	@Value("${spring.social.facebook.appId}")
-	String appId;
-	
 	private FacebookConnectionFactory factory = new FacebookConnectionFactory("757048685076225",
 			"f1a870fa3d717f10ff4bd127598842f9");
 
