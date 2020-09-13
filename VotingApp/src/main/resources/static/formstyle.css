@@ -1,0 +1,24 @@
+.section {
+	margin-top: 80px;
+}
+
+.formsection {
+	margin-top: 40px;
+}
+
+.half-width {
+	width: 50%;
+}
+
+.inline {
+	float: left;
+}
+
+.chart {
+	width: 60%;
+}
+
+.optionform {
+	width: 40%;
+	margin-top: 50px;
+}
